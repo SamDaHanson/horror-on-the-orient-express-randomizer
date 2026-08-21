@@ -13,20 +13,18 @@ function CarBox({
   car: PlacedCar
   occupant?: string
 }) {
-  const showEffect = car.active && Boolean(car.effect)
-
   return (
     <div
-      className={`car-box ${car.active ? 'is-active' : ''} ${car.isLocomotive ? 'is-locomotive' : ''}`}
+      className={`car-box ${car.active || car.isLocomotive ? 'is-active' : ''}`}
     >
-      {car.active ? <span className="car-active-mark">Active</span> : null}
+      <span className={`car-active-mark ${car.active ? '' : 'is-hidden'}`}>
+        Active
+      </span>
       <span className="car-name">{car.name}</span>
-      {occupant ? <span className="car-occupant">{occupant}</span> : null}
-      {showEffect ? (
-        <span className="car-effect">
-          <IconText text={car.effect} />
-        </span>
-      ) : null}
+      <span className="car-occupant">{occupant ?? '\u00a0'}</span>
+      <span className="car-effect">
+        <IconText text={car.effect} />
+      </span>
     </div>
   )
 }

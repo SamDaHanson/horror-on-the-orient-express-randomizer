@@ -76,14 +76,19 @@ export function InvestigatorSelectScreen({
             Reroll
           </button>
         ) : null}
-        <button
-          type="button"
-          className="next"
-          disabled={!allPicked}
-          onClick={onContinue}
-        >
-          {continueLabel}
-        </button>
+        <div className="actions-next">
+          {allPicked ? null : (
+            <p className="continue-hint">Please select your investigators.</p>
+          )}
+          <button
+            type="button"
+            className="next"
+            disabled={!allPicked}
+            onClick={onContinue}
+          >
+            {continueLabel}
+          </button>
+        </div>
       </div>
     </div>
   )

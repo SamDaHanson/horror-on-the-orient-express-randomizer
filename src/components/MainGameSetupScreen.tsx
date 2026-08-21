@@ -24,7 +24,7 @@ export function MainGameSetupScreen({
 
       {deal.cars ? (
         <section className="panel">
-          <h2>Car layout</h2>
+          <h2>Train layout</h2>
           <TrainLayout cars={deal.cars} />
         </section>
       ) : null}

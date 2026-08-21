@@ -284,7 +284,7 @@ export function SetupScreen({ setup, onChange, onNext }: SetupScreenProps) {
 
           <OptionRow
             id="rand-train"
-            label="Train car layout"
+            label="Train layout"
             checked={randomize.trainCarLayout}
             onChange={(checked) => patchRandomize({ trainCarLayout: checked })}
             extras={

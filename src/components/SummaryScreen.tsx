@@ -160,7 +160,7 @@ export function SummaryScreen({
 
       {mainDeal?.cars ? (
         <section className="panel">
-          <h2>Car Layout</h2>
+          <h2>Train Layout</h2>
           <TrainLayout cars={mainDeal.cars} occupants={occupants} />
         </section>
       ) : null}

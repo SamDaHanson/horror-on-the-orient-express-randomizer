@@ -52,6 +52,13 @@ export function clampChoices(
   return Math.min(Math.max(1, choices), max)
 }
 
+export function defaultChoicesPerPlayer(
+  expansions: Expansions,
+  playerCount: PlayerCount,
+): number {
+  return Math.min(2, maxChoicesPerPlayer(expansions, playerCount))
+}
+
 export const VAMPIRE_WEIGHT_OPTIONS: { value: WeightMode; label: string }[] = [
   {
     value: 'weighted',
@@ -85,7 +92,14 @@ export const initialSetup: SetupState = {
   playerCount: 1,
   randomize: {
     investigators: true,
-    investigatorChoicesPerPlayer: 1,
+    investigatorChoicesPerPlayer: defaultChoicesPerPlayer(
+      {
+        investigatorsUnveiled: false,
+        newMonstrosities: false,
+        kickstarterExclusives: false,
+      },
+      1,
+    ),
     generalSkillChoices: true,
     attributeChoices: true,
     suspects: true,

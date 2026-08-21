@@ -280,9 +280,25 @@
 .actions {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
   flex-wrap: wrap;
   gap: 12px;
   padding-top: 24px;
+}
+
+.actions-next {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.continue-hint {
+  max-width: 220px;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--ink-muted);
+  text-align: right;
 }
 
 .next,
@@ -434,7 +450,8 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-height: 168px;
+  height: 100%;
+  min-height: 188px;
   padding: 10px 8px 12px;
   border: 1px solid var(--gold-dim);
   background: var(--paper-raised);
@@ -442,10 +459,6 @@
 
 .car-box.is-active {
   border-color: var(--gold);
-  background: #271614;
-}
-
-.car-box.is-locomotive {
   background: var(--blood-deep);
 }
 
@@ -459,6 +472,10 @@
   padding: 2px 5px;
 }
 
+.car-active-mark.is-hidden {
+  visibility: hidden;
+}
+
 .car-name {
   font-family: var(--serif);
   font-size: 16px;
@@ -470,12 +487,15 @@
   font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--gold);
+  min-height: 1.2em;
 }
 
 .car-effect {
+  flex: 1;
   font-size: 11px;
   line-height: 1.4;
   color: var(--ink-muted);
+  min-height: 2.8em;
 }
 
 .icon-text {
@@ -913,6 +933,15 @@
     gap: 8px;
   }
 
+  .actions-next {
+    width: 100%;
+  }
+
+  .continue-hint {
+    max-width: none;
+    text-align: center;
+  }
+
   .next,
   .back,
   .restart {
@@ -975,7 +1004,7 @@
   }
 
   .car-box {
-    min-height: 0;
+    min-height: 148px;
     gap: 4px;
     padding: 8px;
   }
@@ -1110,6 +1139,7 @@
     justify-content: stretch;
   }
 
+  .actions-next,
   .next,
   .back,
   .restart {

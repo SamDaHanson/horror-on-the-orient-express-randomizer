@@ -69,6 +69,11 @@ export function SkillsAttributesScreen({
     )
   }
 
+  const continueHint = needsSkill && needsAttribute
+    ? 'Please select your skills and attributes.'
+    : needsSkill
+      ? 'Please select your skills.'
+      : 'Please select your attributes.'
   const allComplete = slots.every((slot) => isComplete(slot.id))
   const activeIndex = slots.findIndex((slot) => slot.id === activeSlotId)
 
@@ -186,14 +191,19 @@ export function SkillsAttributesScreen({
         <button type="button" className="back" onClick={onReroll}>
           Reroll
         </button>
-        <button
-          type="button"
-          className="next"
-          disabled={!allComplete}
-          onClick={onContinue}
-        >
-          {continueLabel}
-        </button>
+        <div className="actions-next">
+          {allComplete ? null : (
+            <p className="continue-hint">{continueHint}</p>
+          )}
+          <button
+            type="button"
+            className="next"
+            disabled={!allComplete}
+            onClick={onContinue}
+          >
+            {continueLabel}
+          </button>
+        </div>
       </div>
     </div>
   )
