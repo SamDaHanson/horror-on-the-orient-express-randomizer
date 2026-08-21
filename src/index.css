@@ -1,0 +1,70 @@
+:root {
+  --ink: #f3e6d0;
+  --ink-muted: #c4b49a;
+  --ink-faint: #8d7b66;
+  --paper: #1a1110;
+  --paper-raised: #241716;
+  --night: #0b0707;
+  --gold: #d4b36a;
+  --gold-dim: #8a7040;
+  --blood: #6e1f28;
+  --blood-deep: #4a141b;
+  --line: rgba(212, 179, 106, 0.35);
+  --danger-mute: #5c5048;
+  --serif: 'Cormorant Garamond', 'Palatino Linotype', Palatino, serif;
+  --sans: 'Barlow', 'Segoe UI', sans-serif;
+  --radius: 2px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  color-scheme: dark;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.45;
+  background-color: var(--night);
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(110, 31, 40, 0.28), transparent 55%),
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 12px,
+      rgba(212, 179, 106, 0.035) 12px 13px
+    );
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
