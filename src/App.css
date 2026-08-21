@@ -888,6 +888,26 @@
     font-size: 13px;
   }
 
+  .check {
+    min-height: 44px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .check-box {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+    margin-top: 0;
+  }
+
+  .check.is-on .check-box::after {
+    left: 8px;
+    top: 3px;
+    width: 7px;
+    height: 13px;
+  }
+
   .actions {
     padding-top: 12px;
     gap: 8px;
@@ -936,22 +956,22 @@
   }
 
   .train-line {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px;
+    display: flex;
+    flex-direction: column;
     min-width: 0;
   }
 
   .car-slot {
-    display: block;
-  }
-
-  .car-slot:last-child {
-    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
   }
 
   .car-coupler {
-    display: none;
+    display: block;
+    width: 6px;
+    height: 8px;
+    margin: 0 auto;
+    flex: 0 0 8px;
   }
 
   .car-box {
