@@ -795,23 +795,122 @@
   margin-top: 8px;
 }
 
-@media (max-width: 640px) {
-  .app {
+@media (max-width: 860px) {
+  .app,
+  .app.is-wide {
     width: calc(100% - 16px);
-    margin: 16px auto 40px;
+    margin: 16px auto calc(40px + env(safe-area-inset-bottom));
   }
 
   .ticket {
-    padding: 24px 18px 20px;
+    padding: 24px 16px 20px;
+    overflow-x: hidden;
   }
 
+  .ticket::before {
+    inset: 6px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.12em;
+    line-height: 1.45;
+  }
+
+  .subtitle {
+    letter-spacing: 0.12em;
+    line-height: 1.45;
+  }
+
+  .nested,
+  .option-extras,
+  .option-note,
+  .option-lock-reason {
+    margin-left: 12px;
+  }
+
+  .select,
+  .dropdown {
+    max-width: 100%;
+  }
+
+  .train-scroll {
+    overflow: visible;
+  }
+
+  .train-line {
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .car-slot {
+    flex-direction: column;
+  }
+
+  .car-coupler {
+    width: 6px;
+    height: 10px;
+    margin: 0 auto;
+    flex: 0 0 10px;
+  }
+
+  .car-box {
+    min-height: 0;
+    padding: 12px 14px;
+  }
+
+  .result-stamp {
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+  }
+
+  .character-name,
+  .car-name,
+  .ability-name {
+    overflow-wrap: anywhere;
+  }
+
+  .summary-players {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-player .portrait {
+    max-width: 180px;
+    width: 42%;
+  }
+
+  .ability-pool-list li {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 640px) {
   .actions {
     justify-content: stretch;
   }
 
   .next,
-  .back {
+  .back,
+  .restart {
     width: 100%;
+    min-width: 0;
+  }
+
+  .player-switch-btn {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .character-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .character-card {
+    padding: 8px;
+  }
+
+  .character-name {
+    font-size: 16px;
   }
 
   .monster-row {
