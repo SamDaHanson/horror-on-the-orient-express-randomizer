@@ -798,34 +798,76 @@
 @media (max-width: 860px) {
   .app,
   .app.is-wide {
-    width: calc(100% - 16px);
-    margin: 16px auto calc(40px + env(safe-area-inset-bottom));
+    width: calc(100% - 8px);
+    margin: 8px auto calc(16px + env(safe-area-inset-bottom));
   }
 
   .ticket {
-    padding: 24px 16px 20px;
+    padding: 14px 8px 12px;
     overflow-x: hidden;
   }
 
   .ticket::before {
-    inset: 6px;
+    inset: 4px;
+  }
+
+  .masthead {
+    padding-bottom: 12px;
+    margin-bottom: 0;
   }
 
   .eyebrow {
-    letter-spacing: 0.12em;
-    line-height: 1.45;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+    line-height: 1.35;
+  }
+
+  .masthead h1 {
+    font-size: 22px;
   }
 
   .subtitle {
-    letter-spacing: 0.12em;
-    line-height: 1.45;
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
+  }
+
+  .panel {
+    padding: 12px 0;
+  }
+
+  .panel h2 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .stack,
+  .nested {
+    gap: 6px;
   }
 
   .nested,
   .option-extras,
   .option-note,
   .option-lock-reason {
-    margin-left: 12px;
+    margin-left: 8px;
+  }
+
+  .nested {
+    padding: 4px 0 2px 8px;
+  }
+
+  .option-row {
+    gap: 6px;
+    padding: 8px 0;
+  }
+
+  .option-note,
+  .option-lock-reason,
+  .pool-note {
+    font-size: 11px;
   }
 
   .select,
@@ -833,34 +875,45 @@
     max-width: 100%;
   }
 
-  .train-scroll {
-    overflow: visible;
+  .select-label {
+    font-size: 10px;
   }
 
-  .train-line {
-    flex-direction: column;
+  .select-intro {
+    margin: 10px 0 2px;
+    font-size: 12px;
+  }
+
+  .check-label {
+    font-size: 13px;
+  }
+
+  .actions {
+    padding-top: 12px;
+    gap: 8px;
+  }
+
+  .next,
+  .back,
+  .restart {
+    min-height: 40px;
     min-width: 0;
+    font-size: 11px;
+    letter-spacing: 0.12em;
   }
 
-  .car-slot {
-    flex-direction: column;
+  .character-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
   }
 
-  .car-coupler {
-    width: 6px;
-    height: 10px;
-    margin: 0 auto;
-    flex: 0 0 10px;
+  .character-card {
+    gap: 4px;
+    padding: 6px;
   }
 
-  .car-box {
-    min-height: 0;
-    padding: 12px 14px;
-  }
-
-  .result-stamp {
-    letter-spacing: 0.04em;
-    overflow-wrap: anywhere;
+  .portrait-initials {
+    font-size: 16px;
   }
 
   .character-name,
@@ -869,18 +922,166 @@
     overflow-wrap: anywhere;
   }
 
+  .character-name {
+    font-size: 12px;
+  }
+
+  .character-title {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+
+  .train-scroll {
+    overflow: visible;
+  }
+
+  .train-line {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .car-slot {
+    display: block;
+  }
+
+  .car-slot:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .car-coupler {
+    display: none;
+  }
+
+  .car-box {
+    min-height: 0;
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .car-name {
+    font-size: 13px;
+  }
+
+  .car-occupant,
+  .car-effect {
+    font-size: 10px;
+  }
+
+  .result-stamp {
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+  }
+
+  .chance-note {
+    margin-top: 4px;
+    font-size: 11px;
+  }
+
+  .monster-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px;
+  }
+
+  .monster-col {
+    padding: 8px 6px;
+    gap: 4px;
+  }
+
+  .monster-col .result-stamp {
+    font-size: 12px;
+  }
+
+  .ability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .ability-card {
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .ability-name {
+    font-size: 13px;
+  }
+
+  .ability-effect {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .player-switch {
+    gap: 6px;
+    margin: 10px 0 4px;
+  }
+
+  .player-switch-btn {
+    min-height: 34px;
+    padding: 6px 10px;
+    font-size: 10px;
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  .suspect-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .suspect-box {
+    gap: 4px;
+    padding: 6px 4px 8px;
+  }
+
+  .desire-revealed {
+    font-size: 8px;
+    letter-spacing: 0.03em;
+  }
+
+  .suspect-car {
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
   .summary-players {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .summary-player {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .summary-player h3 {
+    font-size: 12px;
   }
 
   .summary-player .portrait {
-    max-width: 180px;
-    width: 42%;
+    max-width: 72px;
+    width: 36%;
+  }
+
+  .ability-pool-list {
+    gap: 6px;
   }
 
   .ability-pool-list li {
-    flex-direction: column;
-    gap: 4px;
+    gap: 4px 8px;
+  }
+
+  .ability-pool-list .ability-name {
+    font-size: 12px;
+  }
+
+  .ability-pool-effect {
+    font-size: 11px;
+  }
+
+  .summary-list li + li {
+    margin-top: 4px;
   }
 }
 
@@ -893,35 +1094,5 @@
   .back,
   .restart {
     width: 100%;
-    min-width: 0;
-  }
-
-  .player-switch-btn {
-    flex: 1 1 calc(50% - 8px);
-  }
-
-  .character-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  .character-card {
-    padding: 8px;
-  }
-
-  .character-name {
-    font-size: 16px;
-  }
-
-  .monster-row {
-    grid-template-columns: 1fr !important;
-  }
-
-  .ability-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .suspect-row {
-    grid-template-columns: 1fr;
   }
 }
