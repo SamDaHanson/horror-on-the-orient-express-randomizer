@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orient-express-setup.com/sitemap.xml
